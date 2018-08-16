@@ -7,7 +7,7 @@ import           Text.Pandoc.Options
 
 --------------------------------------------------------------------------------
 main :: IO ()
-main = hakyll $ do
+main = hakyllWith (def {deployCommand = "./deploy.sh"}) $ do
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler
