@@ -54,7 +54,7 @@ main = hakyllWith (def {deployCommand = "./deploy.sh"}) $ do
             posts <- recentFirst =<< loadAll "posts/*/*"
             let indexCtx =
                     listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Home"                `mappend`
+--                    constField "title" "Home"                `mappend`
                     defaultContext
 
             getResourceBody
